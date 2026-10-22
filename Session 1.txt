@@ -1,0 +1,112 @@
+Contains code snippets for the first session
+
+Aims to cover all the basic concepts
+
+
+### **What is JavaScript?**
+
+**JavaScript** is a high-level, interpreted programming language primarily used to add dynamic behavior and interactivity to web pages. While **HTML** defines webpage structure and **CSS** handles layout and presentation, **JavaScript** enables pages to respond to user actions, manipulate DOM elements, validate inputs, process data, communicate with APIs, and persist local storage.
+
+#### **Brief History of JavaScript**
+* **1995 — Creation:** Created in just 10 days by **Brendan Eich** while working at Netscape Communications. It was initially named *Mocha*, then renamed to *LiveScript*, and finally branded as *JavaScript* to capitalize on Java's popularity at the time.
+* **1997 — Standardization:** JavaScript was submitted to ECMA International for standardization, resulting in the **ECMAScript (ES)** specification.
+* **2009 — Node.js & Server-Side Expansion:** Ryan Dahl created Node.js, allowing JavaScript to run outside browsers on backend servers.
+* **2015 — ECMAScript 6 (ES6):** The release of ES6 introduced major modern features such as `let`/`const` block scoping, Arrow Functions, Promises, Template Literals, Classes, and Modules.
+
+---
+
+### **Chrome V8 vs. Node.js: How They Differ**
+
+| Feature | **Chrome V8 Engine** | **Node.js** |
+| :--- | :--- | :--- |
+| **Type** | JavaScript Execution Engine (JIT Compiler) | JavaScript Runtime Environment |
+| **Environment** | Runs **inside** the Google Chrome Web Browser | Runs **outside** the browser (on servers/desktops) |
+| **Role** | Parses JavaScript code and compiles it directly into native machine code. | Wraps the V8 engine in C++ to provide OS-level capabilities. |
+| **Global Object** | `window` | `global` |
+| **Available APIs** | DOM APIs (`document`), Web APIs, LocalStorage, Canvas, Fetch. | File System (`fs`), HTTP Server (`http`), OS (`os`), Process (`process`). |
+| **DOM Access** | **Yes** — directly manipulates HTML/CSS elements. | **No** — has no DOM or browser window context. |
+
+> **Analogy:** If **Chrome V8** is a high-performance **engine**, **Node.js** is the **entire car** built around that engine, equipped with wheels, steering, and fuel systems (File System, Networking, OS bindings) to run on the open road (servers).
+
+---
+
+### **Comparing Node.js, Vue.js, and AngularJS**
+
+| Criteria | **Node.js** | **Vue.js** | **AngularJS / Angular** |
+| :--- | :--- | :--- | :--- |
+| **Category** | Backend Runtime Environment | Frontend Progressive Framework | Frontend Enterprise Application Framework |
+| **Execution Site** | **Server-side** (Operating System) | **Client-side** (Browser) | **Client-side** (Browser) |
+| **Main Purpose** | Building backend web servers, REST APIs, and command-line tools. | Building interactive user interfaces and Single-Page Applications (SPAs). | Building large-scale, complex enterprise-grade web applications. |
+| **Architecture** | Event-driven, non-blocking asynchronous I/O. | Component-based, Virtual DOM, reactive data binding. | Full MVC / MVVM framework with Dependency Injection. |
+| **Created By** | Ryan Dahl (2009) | Evan You (2014) | Google (2010 for AngularJS, rewritten 2016) |
+| **Learning Curve** | Moderate (requires backend/async understanding) | **Gentle / Beginner-friendly** | Steep (requires TypeScript, RxJS, and strict structures) |
+
+---
+
+
+Quickest way to run js is through the console- ctrl shift j, or option comm j
+Console tab-> try the following:
+
+console.log('hi, this is a mere statement')
+console.warn('this is a warning'+'it consists of a yellow triangle with !, followed by text message')
+console.error('this is an error msg- red circle with X, then msg')
+
+Expression: fragment of code that represents a value 
+e.g. 100+300;
+
+Evaluation: act of determining the value of an expression 
+
+Variables:
+
+let- most preferred
+const- less preferred
+
+An example to illustrate the distinct uses of let and const:
+
+const PI=3.14159;
+let radius=10;
+let diameter=2*radius;
+
+let circumference=diameter*PI;
+let area=PI*radius*radius;
+
+Trying to assign a new value to a defined const variable results in TypeError
+
+Naming conventions- javascript prefers camelCase over snake_case
+
+Template literals:
+Placeholder syntax: backy\ticks `` and ${}
+let day="Monday"
+`Hello, today is ${day}`;
+
+`There are ${60*60*24} seconds in a day`;
+
+Undefined- default, automatic assignment when no value is assigned
+Null-to explicitly mark something as empty 
+
+Coercion: "Current score:"+10;
+
+The 'truthiness' operator: !!5
+
+Document Object Model:
+
+When web browser loads a html file (ctrl+o), it create an internal model of the elements- known as DOM
+document= another word for webpage
+
+DOM= dynamic, can be modified by js 
+(elements tab in browser)
+
+DOM APIs:
+allow modification of DOM:
+
+(Refer to simplePage.html:
+newLine=document.getElementById('sentence');
+newLine.innerText
+newLine.innerText='I have hacked into this HAHAHA ';
+)
+
+Event- how the browser tells js that something has happened in the DOM
+Event handler- function triggered by a specific event type on a specific element
+
+e.g. addEventListener- takes as parameters, (action, event)
+action in (click, keydown, scroll), event is another function- such as console.log, console.warn etc. 
